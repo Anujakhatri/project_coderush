@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      border: 2px solid gray;
+      border-radius: 8px;
+      width: 300px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .card img {
+      border-radius: 50%;
+      height: 200px;
+      width: 205px;
+    }
+
+    .card h1 {
+      margin: 10px 0 5px;
+    }
+
+    .card h2 {
+      color: purple;
+      margin: 0 0 15px;
+    }
+
+    #followBtn {
+      padding: 10px 20px;
+      background-color: rgb(90, 251, 197);
+      border: none;
+      border-radius: 8px;
+    }
+
+    #followBtn:hover {
+      background-color: rgb(38, 241, 174);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="pp.jpg" alt="My Profile">
+    <h1>Aiswarya Pokharel</h1>
+    <h2>Frontend Developer</h2>
+    <button id="followBtn">Follow</button>
+  </div>
+</body>
+<script>
+  const followBtn = document.getElementById("followBtn");
+  followBtn.addEventListener('click', () => {
+    if (followBtn.textContent === "Follow") {
+      followBtn.textContent = "Unfollow";
+      followBtn.style.backgroundColor = "gray";
+    }
+    else {
+      followBtn.textContent = "Follow";
+      followBtn.style.backgroundColor = "rgb(64, 245, 184)";
+    }
+  })
+</script>
+
+</html>
