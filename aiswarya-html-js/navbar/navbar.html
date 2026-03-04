@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+    * {
+      padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      background-color: teal;
+      color: white;
+      padding: 10px 12px;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    #toogle {
+      display: none;
+      cursor: pointer;
+    }
+
+    @media(max-width:768px) {
+      ul {
+        display: none;
+        flex-direction: column
+      }
+
+      ul.show {
+        display: flex
+      }
+
+      #toogle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <nav>
+    <div id="logo">Aiswarya</div>
+    <ul id="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Skills</li>
+      <li>Contact</li>
+    </ul>
+    <div id="toogle">☰</div>
+  </nav>
+
+  <script>
+    document.getElementById("toogle").onclick = () => {
+      document.getElementById("menu").classList.toogle("show");
+    };
+
+  </script>
+</body>
+
+
+
+</html>

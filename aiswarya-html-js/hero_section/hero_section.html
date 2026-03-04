@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgb(232, 218, 191);
+    }
+
+    #target {
+      height: 100vh;
+      background: whitesmoke;
+    }
+
+    button {
+      padding: 8px;
+      border-radius: 8px;
+      outline: none;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <h1>Welcome</h1>
+    <button onclick="scrollToSection()">Get Started</button>
+  </section>
+  <section id="target">Target Section</section>
+
+
+  <script>
+    function scrollToSection() {
+      document.getElementById("target").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+
+</html>

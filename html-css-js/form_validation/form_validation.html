@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid gray;
+      border-radius: 8px;
+      width: 300px;
+      padding: 20px 20px;
+
+    }
+
+    form:hover {
+      box-shadow: 0.5px 0.5px 0.5px 0.5px gray;
+    }
+
+    .card input {
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .card #submitBtn {
+      background-color: black;
+      border: 1px solid whitesmoke;
+      color: white;
+      border-radius: 8px;
+      padding: 5px 8px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Form</h2>
+  <form action="">
+
+    <div class="card">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+    </div>
+    <div class="card">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" placeholder="......@gmail.com"
+        required>
+    </div>
+    <div class="card">
+      <label for="phone">Mobile Number:</label>
+      <input type="tel" placeholder="Your Mobile Number" name="phone" id="phone" pattern="[0-9]{10}" required>
+    </div>
+    <div class="card">
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" required>
+    </div>
+    <div class="card">
+      <label for="address"> Address:</label>
+      <input type="text" name="address" id="address" required>
+    </div>
+    <div class="card">
+      <label>Gender:</label>
+
+      <input type="radio" name="gender" id="male" value="Male">
+      <label for="male">Male</label>
+
+      <input type="radio" name="female" id="female" value="Female">
+      <label for="female">Female</label>
+
+      <input type="radio" name="others" id="others" value="Others">
+      <label for="others">Others</label>
+    </div>
+    <div class="card">
+      <button id="submitBtn">Submit</button>
+    </div>
+  </form>
+</body>
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const age = document.getElementById('age').value.trim();
+
+  })
+  if (name(!isNaN) || name.length < 5) error.textContent = "Invalid Name!!";
+  else if (age(isNaN) || age <= 0) error.textContent = 'Invalid Age!!';
+  else if (phone(isNaN) || phone.length < 10) error.textContent = "Invalid Phone Number";
+  else if (address.length < 5) error.textContent = "Invalid Address"
+  else if (!gender) error.textContent = "Please select your gender!";
+  else if (!email.includes("@")) error.textContent = "Invalid email";
+  else error.textContent = "Form Submitted Successfully!!!";
+</script>
+
+</html>
