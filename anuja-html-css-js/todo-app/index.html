@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .todo-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .add-btn {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .action {
+            display: flex;
+            gap: 5px;
+        }
+
+        .edit-btn {
+            background: #ffc107;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>TODO APP</h1>
+        <div class="input">
+            <input id="task" class="todo-input" type="text" placeholder="add item ...">
+            <button class="add-btn" onclick="addTask()"> Add </button>
+        </div>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            if (task.value.trim() === "") return;
+
+            const li = document.createElement("li");
+            li.className = "todo-item";
+
+            li.innerHTML = `
+                <span class="task-text">${task.value}</span>
+                <div class="action">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            `;
+
+            const span = li.querySelector(".task-text");
+            const editBtn = li.querySelector(".edit-btn");
+            const deleteBtn = li.querySelector(".delete-btn");
+
+            // Delete Functionality
+            deleteBtn.onclick = () => li.remove();
+
+            // Edit Functionality
+            editBtn.onclick = () => {
+                const newValue = prompt("Edit task:", span.textContent);
+                if (newValue !== null && newValue.trim() !== "") {
+                    span.textContent = newValue;
+                }
+            };
+
+            list.appendChild(li);
+            task.value = "";
+        }
+    </script>
+</body>
+
+</html>

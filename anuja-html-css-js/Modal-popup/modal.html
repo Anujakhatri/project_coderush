@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Popup</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            background: #cbd4dd;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+
+        .modal .content {
+            background: #cbd4dd;
+            margin: 10% auto;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        .modal .content:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+
+        .modal .content span {
+            color: red;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bottom layer -->
+    <button onclick="OpenModal()">Open Modal</button>
+
+    <!-- Middle layer -->
+    <div id="modal" class="modal">
+
+        <!-- Top layer -->
+        <div class="content">
+            Hello Modal
+            <span onclick="closeModal()">&times;</span>
+        </div>
+
+    </div>
+
+    <script>
+        function OpenModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

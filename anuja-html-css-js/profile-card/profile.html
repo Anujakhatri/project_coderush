@@ -13,23 +13,23 @@
     <div class="card">
         <img src="avatar.jpg" width="100px" height="100px" alt="profile">
         <h2>Anuja Khatri</h2>
-        <p> Web developer </p>
-        <button id="followBtn">Follow</button>
+        <p> Sofftware developer </p>
+        <button id="followBtn" class="btn-blue">Follow</button>
     </div>
-    <div class="container1"></div>
-    <div class="container2"></div>
-    <div class="container3"></div>
-    <div class="container4"></div>
 </body>
 <script>
     const followBtn = document.getElementById('followBtn');
     followBtn.addEventListener('click', () => {
         if (followBtn.textContent === 'Follow') {
             followBtn.textContent = 'Unfollow';
-            followBtn.style.backgroundColor = 'red';
+            // Remove previous color classes and add the red one
+            followBtn.classList.remove('btn-blue', 'btn-green');
+            followBtn.classList.add('btn-red');
         } else {
             followBtn.textContent = 'Follow';
-            followBtn.style.backgroundColor = 'green';
+            // Remove previous color classes and add the green one
+            followBtn.classList.remove('btn-blue', 'btn-red');
+            followBtn.classList.add('btn-green');
         }
     });  
 </script>

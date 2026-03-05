@@ -1,0 +1,13 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #e5e7eb;
+}
+
+#target {
+    height: 100vh;
+    background: #f3f4f6;
+}
